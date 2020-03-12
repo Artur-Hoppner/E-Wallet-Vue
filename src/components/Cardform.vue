@@ -1,10 +1,7 @@
 <template>
   <div class="createcard">
 
-<!--
-  Temporary creditcardbox
--->
-<!-- remove creat card. This should be universal -->
+
     <main  class="createcards">
     <h1>Creater Cards</h1>
     <ul class="cardstyle">
@@ -21,7 +18,6 @@
     <label for="cardholdername">CARDHOLDER NAME</label>
     <input type="text" name="cardholdername" placeholder="Firstname Lastname" maxlength="24" v-model="card.cardholdername">
 
-<!-- Skriv om så det förkortas.-->
     <select name="month" v-model="card.month"> 
         <option value="01">01</option>
         <option value="02">02</option>
@@ -37,7 +33,6 @@
         <option value="12">12</option>
      </select> 
 
-<!-- Skriv om så det förkortas. -->
      <select name="year" v-model="card.year">
           <option value="21">21</option>
           <option value="22">22</option>
@@ -47,19 +42,17 @@
      </select>
 
 <select name="Vendor" v-model="card.vendor">
-    <option value="Bitcoin">Bitcoin Inc</option>
-    <option value="Blockchain">Blockchain Ink</option>
-    <option value="Evil">Evil Corp</option>
-    <option value="Ninja">Ninja Bank</option>
+    <option value="bitcoin">Bitcoin Inc</option>
+    <option value="blockchain">Blockchain Ink</option>
+    <option value="bvil">Evil Corp</option>
+    <option value="binja">Ninja Bank</option>
 </select>
 
-<!-- <input type="submit" value="Add Card" v-on:click="addcard"> -->
-
-<!-- <p v-on:click="addcard">dekspdskpoada</p> -->
 <button v-bind="card" v-on:click="addcard">klicka</button>
 
+<div class="linkcontainer">
             <router-link to="/">CreateCard</router-link>
-
+</div>
     </main>
   </div>
 </template>
@@ -95,3 +88,10 @@ methods:{
 }
 
 </script>
+
+
+<style lang="scss">
+
+
+
+</style>

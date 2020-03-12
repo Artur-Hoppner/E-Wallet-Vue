@@ -2,6 +2,9 @@
 <div>
   <article>
     
+
+
+
       <ul class="cardlist">
         <p>fnjklsdjflk</p>
          <li
@@ -10,10 +13,9 @@
           {{ cardlist.cardholdername }}
           {{ cardlist.month }}/
           {{ cardlist.year }}
-
           <img v-if="cardlist.vendor == 'bitcoin'" src="@/assets/chip-dark.svg" alt="Dark Chip Logo">
           <img v-if="cardlist.vendor !== 'bitcoin'" src="@/assets/chip-light.svg" alt="Light Chip Logo">
-          <img v-if="cardlist.vendor ==  'ninja'" src="@/assets/vendor-ninja.svg" alt="Ninja Logo">
+          <img v-bind:src="require('@/assets/vendor-' + cardlist.vendor +  '.svg')">
          </li>
       </ul>
 
@@ -47,4 +49,9 @@ export default {
 
 <style>
 
+.cardlist {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 </style>

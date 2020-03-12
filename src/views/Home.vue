@@ -1,20 +1,22 @@
 <template>
   <div class="home">
-
+    <Top headline="E-WALLET"/>
     <Card/>
 
-
+<div class="linkcontainer">
     <router-link class="addCard" to="/AddCard" >Add Card</router-link>
-
+</div>
   </div>
 </template>
 
 <script>
+import Top from '@/components/Top.vue'
 import Card from '@/components/Card.vue'
 
 export default {
   name: 'Home',
   components: {
+    Top,
     Card,
 
   },
@@ -26,28 +28,6 @@ export default {
 
 <style lang="scss">
 
-a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 10rem;
-  height: 3.5rem;
-  font-size: 1.4rem;
-  font-weight: 600;
-  text-decoration: none;
-  color: black;
-  border: .125rem solid black;
-  border-radius: .5rem;
-        &:hover {  
-        background: rgb(25, 25, 25);
-        color: #ddd;
 
-      }
-        &:active {
-        background: rgb(25, 25, 25);
-        color: #ddd;
-        }
-
-}
 
 </style>
