@@ -56,7 +56,7 @@
 <!-- <input type="submit" value="Add Card" v-on:click="addcard"> -->
 
 <!-- <p v-on:click="addcard">dekspdskpoada</p> -->
-<!-- <button v-bind="card" v-on:click="addcard">klicka</button> -->
+<button v-bind="card" v-on:click="addcard">klicka</button>
 
             <router-link to="/">CreateCard</router-link>
 
@@ -84,14 +84,14 @@ data() {
   }
 },
 
-// methods:{
-//         addcard() {
+methods:{
+        addcard() {
          
-//             this.$root.$data.cardlist.push(
-//               this.card
-//               )
-//         },
-//   }
+            this.$root.$data.cardlist.push(
+              this.card
+              )
+        },
+  }
 }
 
 </script>
