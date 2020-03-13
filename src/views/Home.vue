@@ -18,11 +18,7 @@ export default {
   components: {
     Top,
     Card,
-
   },
-
-
-
 }
 </script>
 

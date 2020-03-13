@@ -11,7 +11,6 @@
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(221, 141, 141);
   width: 36rem;
   padding: 1rem;
   box-sizing: border-box;
@@ -21,8 +20,7 @@ body {
   background-color: rgb(251, 251, 251);
   display: flex;
   justify-content: center;
-  
-
+  align-items: center;
 }
 
 // AddCard link and Create card link

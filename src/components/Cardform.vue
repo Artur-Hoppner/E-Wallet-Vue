@@ -44,8 +44,8 @@
 <select name="Vendor" v-model="card.vendor">
     <option value="bitcoin">Bitcoin Inc</option>
     <option value="blockchain">Blockchain Ink</option>
-    <option value="bvil">Evil Corp</option>
-    <option value="binja">Ninja Bank</option>
+    <option value="evil">Evil Corp</option>
+    <option value="ninja">Ninja Bank</option>
 </select>
 
 <button v-bind="card" v-on:click="addcard">klicka</button>
