@@ -1,6 +1,8 @@
 <template>
   <div class="home">
     <top headline="ADD NEW CARD"/>
+    <!-- <Card/> -->
+
     <CardForm/>
 
 
@@ -12,12 +14,14 @@
 <script>
 import Top from '@/components/Top.vue'
 import CardForm from '@/components/CardForm.vue'
+// import Card from '@/components/Card.vue'
 
 export default {
   name: 'AddCard',
   components: {
     Top,
     CardForm,
+    // Card,
 
   },
 

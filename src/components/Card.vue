@@ -1,32 +1,27 @@
 <template>
 <div>
-  <article>
-    
 
-
-
-      <section class="outercontainer">
+      <!-- <section class="outercontainer"> -->
          <article
-            class="cardcontainer" v-bind:class="cardlist.vendor"
-            v-for="cardlist in creditcards" :key="cardlist.id" alt="basecolor">
-          
-          <img v-bind:src="require('@/assets/vendor-' + cardlist.vendor +  '.svg')"/>
-          <img v-if="cardlist.vendor == 'bitcoin'" src="@/assets/chip-dark.svg" alt="Dark Chip Logo">
-          <img v-if="cardlist.vendor !== 'bitcoin'" src="@/assets/chip-light.svg" alt="Light Chip Logo">
-            
-          <p>{{ cardlist.cardnumber }}</p>
-          <p>{{ cardlist.cardholdername }}</p>
-          <p>{{ cardlist.month }}</p>/
-          <p>{{ cardlist.year }}</p>
-       
+              class="cardcontainer" v-bind:class="cardlist.vendor"
+              v-for="cardlist in creditcards" :key="cardlist.id">
+            <header>
+                <img v-bind:src="require('@/assets/vendor-' + cardlist.vendor +  '.svg')"/>
+                <img v-if="cardlist.vendor == 'bitcoin'" src="@/assets/chip-dark.svg" alt="Dark Chip Logo">
+                <img v-if="cardlist.vendor !== 'bitcoin'" src="@/assets/chip-light.svg" alt="Light Chip Logo">
+            </header>
+            <p>{{ cardlist.cardnumber }}</p>
+            <aside>
+                <P>CARDHOLDER NAME</P>
+                <p>{{ cardlist.cardholdername }}</p>
+            </aside>
+            <aside>
+                <P>VALID THRU</P>
+                <p>{{ cardlist.month }}/{{ cardlist.year }}</p>/
+            </aside>
 
          </article>
-      </section>
-
-
-  </article>
-
-
+      <!-- </section> -->
 
 </div>
 
@@ -34,41 +29,34 @@
 
 <script>
 export default {
-      name: "Card",
 
-  data:() => ({}),
-    
     computed: {
         creditcards(){
             return this.$root.$data.cardlist
-        },
-        
+        },     
       },
-      method: {
-      }
-    
-
 }
 
 </script>
 
 <style>
-.outercontainer {
+/* .outercontainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
+} */
 .cardcontainer {
-    display: grid;
-    grid-column: auto/span 2;
-    grid-row: auto/span 2;
-    /* display: flex;
-    align-items: center;
+    /* display: grid; */
+    /* grid-column: auto/span 2;
+    grid-row: auto/span 2; */
+    display: flex;
+    /* align-items: center;
     flex-direction: column;
     align-items: center; */
     width: 24rem;
     height: 14rem;
     border-radius: 1rem;
+    box-shadow: 0.1rem 0.2rem 0.7rem 0rem rgb(36, 36, 36);
 
 
 }

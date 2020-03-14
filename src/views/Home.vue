@@ -1,7 +1,8 @@
 <template>
   <div class="home">
     <Top headline="E-WALLET"/>
-    <Card/>
+    <p>Active Card</p>
+    <Cardstack/>
 
 <div class="linkcontainer">
     <router-link class="addCard" to="/AddCard" >Add Card</router-link>
@@ -11,13 +12,13 @@
 
 <script>
 import Top from '@/components/Top.vue'
-import Card from '@/components/Card.vue'
+import Cardstack from '@/components/CardStack.vue'
 
 export default {
   name: 'Home',
   components: {
     Top,
-    Card,
+    Cardstack,
   },
 }
 </script>
