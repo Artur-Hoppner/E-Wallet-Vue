@@ -1,6 +1,6 @@
 <template>
 <div>
-<Card/>
+    <Card v-bind:cardlist="cardlist" v-for="cardlist in creditcards" :key="cardlist.id"/>
 
 
 </div>

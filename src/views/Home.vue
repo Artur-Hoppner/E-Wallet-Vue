@@ -4,6 +4,9 @@
     <p>Active Card</p>
     <Cardstack/>
 
+
+
+
 <div class="linkcontainer">
     <router-link class="addCard" to="/AddCard" >Add Card</router-link>
 </div>
@@ -20,6 +23,7 @@ export default {
     Top,
     Cardstack,
   },
+
 }
 </script>
 

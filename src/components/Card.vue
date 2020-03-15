@@ -1,10 +1,10 @@
 <template>
 <div>
 
-      <!-- <section class="outercontainer"> -->
+      <section class="outercontainer">
          <article
               class="cardcontainer" v-bind:class="cardlist.vendor"
-              v-for="cardlist in creditcards" :key="cardlist.id">
+              >
             <header>
                 <img v-bind:src="require('@/assets/vendor-' + cardlist.vendor +  '.svg')"/>
                 <img v-if="cardlist.vendor == 'bitcoin'" src="@/assets/chip-dark.svg" alt="Dark Chip Logo">
@@ -17,11 +17,11 @@
             </aside>
             <aside>
                 <P>VALID THRU</P>
-                <p>{{ cardlist.month }}/{{ cardlist.year }}</p>/
+                <p>{{ cardlist.month }}/{{ cardlist.year }}</p>
             </aside>
 
          </article>
-      <!-- </section> -->
+      </section>
 
 </div>
 
@@ -30,6 +30,9 @@
 <script>
 export default {
 
+    props: {
+      cardlist: Object
+    },
     computed: {
         creditcards(){
             return this.$root.$data.cardlist
@@ -40,11 +43,11 @@ export default {
 </script>
 
 <style>
-/* .outercontainer {
+.outercontainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-} */
+}
 .cardcontainer {
     /* display: grid; */
     /* grid-column: auto/span 2;
