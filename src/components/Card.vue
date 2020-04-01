@@ -6,7 +6,7 @@
               class="cardcontainer" v-bind:class="cardlist.vendor"
               >
             <header>
-                <img v-bind:src="require('@/assets/vendor-' + cardlist.vendor +  '.svg')"/>
+                <img v-if="cardlist.vendor" v-bind:src="require('@/assets/vendor-' + cardlist.vendor +  '.svg')"/>  Change this to use it in 
                 <img v-if="cardlist.vendor == 'bitcoin'" src="@/assets/chip-dark.svg" alt="Dark Chip Logo">
                 <img v-if="cardlist.vendor !== 'bitcoin'" src="@/assets/chip-light.svg" alt="Light Chip Logo">
             </header>
@@ -33,11 +33,11 @@ export default {
     props: {
       cardlist: Object
     },
-    computed: {
-        creditcards(){
-            return this.$root.$data.cardlist
-        },     
-      },
+    // computed: {
+    //     creditcards(){
+    //         return this.$root.$data.cardlist
+    //     },     
+    //   },
 }
 
 </script>
@@ -49,18 +49,19 @@ export default {
   align-items: center;
 }
 .cardcontainer {
-    /* display: grid; */
-    /* grid-column: auto/span 2;
-    grid-row: auto/span 2; */
+    /* display: grid;
+    grid-column: auto/span 2;
+    grid-row: auto/span 2;
     display: flex;
-    /* align-items: center;
+    align-items: center;
     flex-direction: column;
     align-items: center; */
     width: 24rem;
     height: 14rem;
     border-radius: 1rem;
     box-shadow: 0.1rem 0.2rem 0.7rem 0rem rgb(36, 36, 36);
-
+    display: block;
+    background-color:#eee;
 
 }
     .basecolor {

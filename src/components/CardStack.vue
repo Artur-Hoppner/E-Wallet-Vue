@@ -1,6 +1,7 @@
 <template>
-<div>
-    <Card v-bind:cardlist="cardlist" v-for="cardlist in creditcards" :key="cardlist.id"/>
+<div class="card-stack">
+    <Card v-bind:cardlist="cardlist"/>
+    <Card v-bind:cardlist="cardlist" v-for="cardlist in creditcards" :key="cardlist.id" @click="activeCard"/>
 
 
 </div>
@@ -27,5 +28,14 @@ components: {
 </script>
 
 <style>
-
+.card-stack {
+    margin: 0 0 10rem;
+    display: grid;
+    grid-auto-rows: 5rem;
+}
+    /* .cardcontainer{
+        overflow: hidden;
+        transform: scale(1);
+    } */
 </style>
+

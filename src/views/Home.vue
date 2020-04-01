@@ -1,7 +1,6 @@
 <template>
   <div class="home">
-    <Top headline="E-WALLET"/>
-    <p>Active Card</p>
+    <Top headline="E-WALLET" description="ACTIVE CARD" />
     <Cardstack/>
 
 

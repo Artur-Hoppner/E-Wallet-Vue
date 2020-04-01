@@ -42,10 +42,8 @@
     <option value="ninja">Ninja Bank</option>
 </select>
 
-<button v-bind="cardlist" v-on:click="addcard">klicka</button>
-
 <div class="linkcontainer">
-            <router-link to="/">CreateCard</router-link>
+            <router-link to="/" v-bind="cardlist" v-on:click.native="addcard">CreateCard</router-link>
 </div>
     </main>
   </div>
@@ -53,7 +51,7 @@
 
 
 <script>
-import Card from '@/components/Top.vue'
+import Card from '@/components/Card.vue'
 
 export default {
 name: "createcards",
@@ -70,7 +68,6 @@ props: {
 
 methods:{
         addcard() {
-         
             this.$root.$data.cardlist.push(
               this.cardlist
               )

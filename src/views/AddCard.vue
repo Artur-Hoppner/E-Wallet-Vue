@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <top headline="ADD NEW CARD"/>
+    <top headline="ADD NEW CARD BANK CARD" description="NEW CARD"/>
     <Card v-bind:cardlist="cardlist"/>
 
     <CardForm v-bind:cardlist="cardlist"/>
@@ -36,14 +36,6 @@ data() {
   }
 },
 
-
-
-
 }
 </script>
 
-<style lang="scss">
-
-
-
-</style>

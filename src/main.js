@@ -15,5 +15,9 @@ new Vue({
     ]
   }),
 
+  methods: {
+// add function to push data into cardlist. Change from cardform. Maybet emit from AddCard
+  },
+
   render: h => h(App)
 }).$mount('#app')
