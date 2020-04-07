@@ -1,27 +1,28 @@
 <template>
-<div>
+<div class="app">
 
-      <section class="outercontainer">
-         <article
-              class="cardcontainer" v-bind:class="cardlist.vendor"
-              >
-            <header>
-                <img v-if="cardlist.vendor" v-bind:src="require('@/assets/vendor-' + cardlist.vendor +  '.svg')"/>  Change this to use it in 
+         <article class="cardcontainer" v-bind:class="cardlist.vendor" >
+            <header class="card-header">
                 <img v-if="cardlist.vendor == 'bitcoin'" src="@/assets/chip-dark.svg" alt="Dark Chip Logo">
                 <img v-if="cardlist.vendor !== 'bitcoin'" src="@/assets/chip-light.svg" alt="Light Chip Logo">
+                <img class="vendor-icon" v-if="cardlist.vendor" v-bind:src="require('@/assets/vendor-' + cardlist.vendor +  '.svg')"/>
             </header>
+
+            <main class="card-main">
             <p>{{ cardlist.cardnumber }}</p>
-            <aside>
-                <P>CARDHOLDER NAME</P>
-                <p>{{ cardlist.cardholdername }}</p>
-            </aside>
-            <aside>
-                <P>VALID THRU</P>
-                <p>{{ cardlist.month }}/{{ cardlist.year }}</p>
+            </main>
+
+            <aside class="card-overfooter">
+                <span>CARDHOLDER NAME</span>
+                <span>VALID THRU</span>
             </aside>
 
+            <footer class="card-footer" >
+                <p>{{ cardlist.cardholdername }}</p>
+                <p>{{ cardlist.month }}/{{ cardlist.year }}</p>
+            </footer>
+
          </article>
-      </section>
 
 </div>
 
@@ -33,55 +34,95 @@ export default {
     props: {
       cardlist: Object
     },
-    // computed: {
-    //     creditcards(){
-    //         return this.$root.$data.cardlist
-    //     },     
-    //   },
 }
 
 </script>
 
-<style>
-.outercontainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+<style lang="scss" scoped>
+
+.app {
+    display: flex;
+
+    align-self: center;
 }
 .cardcontainer {
-    /* display: grid;
-    grid-column: auto/span 2;
-    grid-row: auto/span 2;
+    width: 23rem;
+    padding: 1rem;
+    height: 14.5rem;
+    border-radius: .6rem;
+    box-sizing: border-box;
+    box-shadow: 0 0 .5rem rgba(0, 0, 0, 0.4);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 2.1rem;
+    text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.178);
+    background: #d0d0d0;
+    color: #fff;
+    
+}
+
+
+.card-header {
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    align-items: center; */
-    width: 24rem;
-    height: 14rem;
-    border-radius: 1rem;
-    box-shadow: 0.1rem 0.2rem 0.7rem 0rem rgb(36, 36, 36);
-    display: block;
-    background-color:#eee;
+    grid-column: auto / span 2;
+    grid-row: auto / span 2;
+    justify-content: space-between;
+    align-items: flex-start;
+    
+
+        .vendor-icon{
+            padding: 0.5rem 0.5rem;
+        }
+}
+
+
+
+.card-main {
+    grid-column: auto / span 2;
+    grid-row: auto / span 2;
+    display: flex;
+    justify-content: center;
+        p {
+            font-size: 1.6rem;
+             letter-spacing: 0.27rem;
+        }
+   
+}
+
+.card-overfooter {
+    grid-column: auto / span 2;
+    grid-row: auto / span 1;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.4rem 0 0 0rem;
+    font-size: 14px;
+}
+
+.card-footer {
+    grid-column: auto / span 2;
+    grid-row: auto / span 1;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0 -1rem 0;
 
 }
-    .basecolor {
-        background: linear-gradient(237.75deg,hsla(0,0%,100%,.24),hsla(0,0%,100%,0)),#d0d0d0; 
-    }
+
+
     .bitcoin {
-        background: linear-gradient(.689turn,hsla(0,0%,100%,.15),hsla(0,0%,100%,0) 99.07%),#ffae34;
-        color: #222;
+        background: #ffae34;
+            color: black;
     }
     .blockchain {
-        background: linear-gradient(248.52deg,rgba(0,0,0,.15) 1.49%,transparent),#8b58f9;
-        color: #fff;
+        background: #8b58f9;
+       color: #fff;
     }
     .evil {
-        background: linear-gradient(248.3deg,rgba(0,0,0,.16),transparent),#f33355;
-        color: #fff;
+        background:#f33355;
+     color: #fff;
     }
 
     .ninja {
-        background: linear-gradient(248.3deg,hsla(0,0%,100%,.15),hsla(0,0%,100%,0)),#222;
-        color: #fff;
+        background: #222;
+       color: #fff;
     }
 </style>

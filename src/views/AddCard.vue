@@ -1,9 +1,9 @@
 <template>
   <div class="home">
-    <top headline="ADD NEW CARD BANK CARD" description="NEW CARD"/>
-    <Card v-bind:cardlist="cardlist"/>
+    <top headline="ADD NEW BANK CARD" description="NEW CARD"/>
+    <Card v-bind:cardlist="cardlistadd"/>
 
-    <CardForm v-bind:cardlist="cardlist"/>
+    <CardForm v-bind:cardlist="cardlistadd"/>
 
 
 
@@ -24,13 +24,13 @@ export default {
   },
 data() {
   return {
-    cardlist: {
+    cardlistadd: {
       id: Date.now(),
       cardholdername: '',
       cardnumber: '',
       month: '',
       year: '',
-      vendor: '',
+      vendor: ''
 
     }
   }

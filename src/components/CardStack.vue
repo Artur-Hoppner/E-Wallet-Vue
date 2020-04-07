@@ -1,9 +1,12 @@
 <template>
-<div class="card-stack">
-    <Card v-bind:cardlist="cardlist"/>
-    <Card v-bind:cardlist="cardlist" v-for="cardlist in creditcards" :key="cardlist.id" @click="activeCard"/>
+<div >
 
+    <Card :cardlist="card" />
+  <div class="card-stack">
 
+   <Card :cardlist="cardlist" v-for="cardlist in creditcards" :key="cardlist.id" @click.native="addItem(cardlist)" />  
+    
+    </div>
 </div>
 
 </template>
@@ -14,28 +17,43 @@ import Card from '@/components/Card.vue'
 
 export default {
 
+data(){
+    return{
+      card: this.$root.$data.cardlist[0],
+  
+
+    }
+  },
+
 components: {
     Card,
 },
 
     computed: {
         creditcards(){
-            return this.$root.$data.cardlist
+            return this.$root.$data.cardlist       
+    },
+
+      },
+    methods: {
+        addItem(cardlist) {
+             this.card = cardlist
+
         },
-      }
+
+    }
+          
+      
 }
 
 </script>
 
 <style>
 .card-stack {
-    margin: 0 0 10rem;
+    margin: 8rem 0 8rem;
     display: grid;
-    grid-auto-rows: 5rem;
+    grid-auto-rows: 3.6rem;
 }
-    /* .cardcontainer{
-        overflow: hidden;
-        transform: scale(1);
-    } */
+
 </style>
 

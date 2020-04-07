@@ -22,9 +22,7 @@ props: {
 </script>
 
 <style lang="scss" scoped>
-// @import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
-h1, p {
-  // font-family: "Press Start 2P";
+ p {
     text-align: center;
 }
 </style>

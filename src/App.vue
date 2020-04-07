@@ -9,11 +9,13 @@
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
+      font-family: PT Mono,monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 36rem;
   padding: 1rem;
   box-sizing: border-box;
+  
 }
 
 body {
@@ -21,6 +23,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
 }
 
 // AddCard link and Create card link

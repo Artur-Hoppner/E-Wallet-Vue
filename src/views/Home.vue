@@ -18,16 +18,26 @@ import Cardstack from '@/components/CardStack.vue'
 
 export default {
   name: 'Home',
+
   components: {
     Top,
     Cardstack,
   },
+   computed: {
+        creditcards(){
+            return this.$root.$data.cardlist    
+    },
 
+      },
 }
 </script>
 
 <style lang="scss">
 
-
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 </style>
